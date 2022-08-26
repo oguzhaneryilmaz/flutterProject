@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mydev/main.dart';
+import 'package:mydev/searchBar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -114,7 +115,8 @@ class _LoginPageState extends State<LoginPage> {
                           textStyle: const TextStyle(fontSize: 15)),
                       child: Text('Sign In'),
                       onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => Homepage())),
+                          MaterialPageRoute(
+                              builder: (context) => SearchPage())),
                     ),
                   )
                 ],
@@ -331,8 +333,3 @@ class RegisterPage extends StatelessWidget {
     );
   }
 }
-
-
-// müzikler ve müzisyenler eklenecek
-// search bar yapılacak
-// veritabanı bağlantısı? yapılacak
