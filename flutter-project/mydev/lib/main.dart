@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
-import 'searchBar.dart';
+import 'search_bar_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +17,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
 
 //  Farklı sayfalar farklı dosyalara ayrılabilir?(Araştır)
 //  Daha fazla müzik ekle

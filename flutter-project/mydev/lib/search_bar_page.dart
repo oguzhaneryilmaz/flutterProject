@@ -1,10 +1,10 @@
+import 'package:mydev/music_page.dart';
 import 'package:mydev/model/music_model.dart';
 import 'package:flutter/material.dart';
-import 'package:mydev/searchBar.dart';
 import 'login_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp()); // ??
 }
 
 class MyApp extends StatelessWidget {
@@ -122,41 +122,66 @@ class _SearchPageState extends State<SearchPage> {
                   //---------------
                   : ListView.builder(
                       itemCount: display_list.length,
-                      itemBuilder: (context, index) => ListTile(
-                        contentPadding: EdgeInsets.all(8.0),
-                        title: TextButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                Color.fromARGB(255, 94, 78, 153)),
+                      itemBuilder: (context, index) => Card(
+                        child: ListTile(
+                          tileColor: Colors.green,
+                          onTap: () => Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => musicPage(),
+                            ),
                           ),
-                          onPressed: () => Navigator.of(context).push(
-                              MaterialPageRoute(
-                                  builder: (context) => LoginPage())),
-                          child: Text(
+                          contentPadding: EdgeInsets.all(8.0),
+                          title: Text(
                             display_list[index].music_title!,
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.purple,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                        ),
-                        subtitle: Text(
-                          '${display_list[index].music_release_year!}',
-                          style: TextStyle(
-                            color: Colors.white,
+                          subtitle: Text(
+                            '${display_list[index].music_release_year!}',
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
                           ),
+                          trailing: Text(
+                            "${display_list[index].rating}",
+                            style: TextStyle(color: Colors.amber),
+                          ),
+                          leading: Image.network(
+                              display_list[index].music_poster_url),
                         ),
-                        trailing: Text(
-                          "${display_list[index].rating}",
-                          style: TextStyle(color: Colors.amber),
-                        ),
-                        leading:
-                            Image.network(display_list[index].music_poster_url),
                       ),
                     ),
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _musicPageState extends State<musicPage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color(0xFFF1EEDB),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Center(
+            child: Text('qwe'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => SearchPage(),
+              ),
+            ),
+            child: Text('temp'),
+          ),
+        ],
       ),
     );
   }
