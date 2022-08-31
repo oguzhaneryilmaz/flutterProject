@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
-import 'search_bar_page.dart';
+import 'music_search_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
 
 //  Farklı sayfalar farklı dosyalara ayrılabilir?(Araştır)
 //  Daha fazla müzik ekle
-//  Müziklere tıkladığımızda müziğe ait sayfayı aç !!!
 //  Kişisel profil sayfası oluştur
 //  Beğendiğin müzikler profilinde gözüksün .. (subject to change)
+//  Müzik çalma/oynatma .
+//  Müzik sözlerini kısa yolla hallet ?
