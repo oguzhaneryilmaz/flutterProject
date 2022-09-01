@@ -38,6 +38,10 @@ class MusicDetailsScreen extends StatelessWidget {
                   style: TextStyle(fontStyle: FontStyle.italic, fontSize: 17.0),
                 ),
               ),
+              IconButton(
+                icon: Icon(Icons.play_arrow),
+                onPressed: () {},
+              ),
             ],
           ),
         ),
