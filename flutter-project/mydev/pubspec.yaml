@@ -28,12 +28,10 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
 
-  just_audio: ^0.9.15
-  audio_video_progress_bar: ^0.9.0
 
   flutter:
     sdk: flutter
-  audioplayers: ^0.20.1
+  audioplayers: ^1.0.1
 
 
 
