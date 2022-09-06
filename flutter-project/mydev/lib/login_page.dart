@@ -1,7 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:mydev/main.dart';
-import 'package:mydev/music_search_list.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -9,6 +9,23 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  Future signIn() async {
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: emailController.text.trim(),
+      password: passwordController.text.trim(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +77,8 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(20)),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20.0),
-                    child: const TextField(
+                    child: TextField(
+                      controller: emailController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Email'),
                     ),
@@ -81,7 +99,8 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(20)),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20.0),
-                    child: const TextField(
+                    child: TextField(
+                      controller: passwordController,
                       decoration: InputDecoration(
                           border: InputBorder.none, hintText: 'Şifre'),
                       obscureText: true,
@@ -110,9 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                           primary: Color(0xFF8D7688),
                           textStyle: const TextStyle(fontSize: 15)),
                       child: Text('Giriş Yap'),
-                      onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => MusicSearchList())),
+                      onPressed: signIn,
                     ),
                   ),
                 ],
@@ -134,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(
-                              builder: (context) => RegisterPage())),
+                              builder: (context) => const RegisterPage())),
                     ),
                   )
                 ],

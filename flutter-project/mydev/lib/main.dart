@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
-import 'music_search_list.dart';
+import 'main_page.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -13,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: MainPage(),
     );
   }
 }
