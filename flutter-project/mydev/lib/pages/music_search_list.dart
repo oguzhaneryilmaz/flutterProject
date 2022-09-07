@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mydev/login_page.dart';
+import 'package:mydev/pages/login_page.dart';
 import 'package:mydev/model/music.dart';
-import 'package:mydev/music_details.dart';
+import 'package:mydev/pages/music_details.dart';
 
 class MyApp extends StatelessWidget {
   MyApp({Key? key}) : super(key: key);
