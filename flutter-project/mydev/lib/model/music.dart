@@ -65,4 +65,33 @@ List<Music> musicList = [
         'https://onlinebasscourses.com/wp-content/uploads/2020/03/Smoke-on-the-water-bass-transcription.png',
     music_path: 'assets/smokeinthewater.mp3',
   ),
+  Music(
+    music_title: 'Cennet',
+    music_release_year: 2019,
+    music_singer: 'Ebru Gündeş',
+    music_poster_url:
+        'https://is3-ssl.mzstatic.com/image/thumb/Music114/v4/40/2c/9b/402c9b26-f5de-9cb7-19ab-8c1550015622/cover.jpg/1200x1200bf-60.jpg',
+    music_path: 'assets/cennet.mp3',
+  ),
+  Music(
+    music_title: 'Senden Daha Güzel',
+    music_release_year: 2009,
+    music_singer: 'Duman',
+    music_poster_url: 'https://pbs.twimg.com/media/CxzTsDeXUAAr8mW.jpg:large',
+    music_path: 'assets/sendendahagüzel.mp3',
+  ),
+  Music(
+    music_title: 'One',
+    music_release_year: 1988,
+    music_singer: 'Metallica',
+    music_poster_url: 'https://i.ytimg.com/vi/36RuWFhBz8U/maxresdefault.jpg',
+    music_path: 'assets/one.mp3',
+  ),
+  Music(
+    music_title: 'Geççek',
+    music_release_year: 2022,
+    music_singer: 'Tarkan',
+    music_poster_url: 'https://pbs.twimg.com/media/FK6VveQXsAAhpxG.jpg',
+    music_path: 'assets/geççek.mp3',
+  ),
 ];

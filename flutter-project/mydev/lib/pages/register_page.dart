@@ -3,11 +3,10 @@ import 'package:mydev/pages/login_page.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF1EEDB),
+      backgroundColor: Color.fromARGB(255, 166, 227, 244),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Center(
@@ -23,13 +22,14 @@ class RegisterPage extends StatelessWidget {
                 Icon(
                   Icons.app_registration_rounded,
                   size: 100,
+                  color: Colors.white,
                 ),
                 //registration page post
 
                 Text(
                   'Kayıt Sayfası',
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Color.fromARGB(255, 25, 80, 125),
                     fontWeight: FontWeight.bold,
                     fontSize: 36,
                   ),
@@ -43,14 +43,19 @@ class RegisterPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color(0xFFD9B4A3),
+                        border: Border.all(
+                          width: 3,
+                          color: Colors.white,
+                        ),
+                        color: Color.fromARGB(255, 25, 80, 125),
                         borderRadius: BorderRadius.circular(20)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
                         decoration: InputDecoration(
                             border: InputBorder.none,
-                            hintText: 'Kullanıcı Adın'),
+                            hintText: 'Kullanıcı Adın',
+                            hintStyle: TextStyle(color: Colors.white)),
                       ),
                     ),
                   ),
@@ -62,13 +67,19 @@ class RegisterPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color(0xFFD9B4A3),
+                        border: Border.all(width: 3, color: Colors.white),
+                        color: Color.fromARGB(255, 25, 80, 125),
                         borderRadius: BorderRadius.circular(20)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
                         decoration: InputDecoration(
-                            border: InputBorder.none, hintText: 'Şifre'),
+                          border: InputBorder.none,
+                          hintText: 'Şifre',
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
                         obscureText: true,
                       ),
                     ),
@@ -80,13 +91,17 @@ class RegisterPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color(0xFFD9B4A3),
+                        border: Border.all(width: 3, color: Colors.white),
+                        color: Color.fromARGB(255, 25, 80, 125),
                         borderRadius: BorderRadius.circular(20)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
                         decoration: InputDecoration(
-                            border: InputBorder.none, hintText: 'Tekrar Şifre'),
+                          border: InputBorder.none,
+                          hintText: 'Tekrar Şifre',
+                          hintStyle: TextStyle(color: Colors.white),
+                        ),
                         obscureText: true,
                       ),
                     ),
@@ -99,32 +114,61 @@ class RegisterPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Color(0xFFD9B4A3),
+                        border: Border.all(width: 3, color: Colors.white),
+                        color: Color.fromARGB(255, 25, 80, 125),
                         borderRadius: BorderRadius.circular(20)),
                     child: Padding(
                       padding: const EdgeInsets.only(left: 20.0),
                       child: TextField(
                         decoration: InputDecoration(
-                            border: InputBorder.none, hintText: 'Email'),
+                          border: InputBorder.none,
+                          hintText: 'Email',
+                          hintStyle: TextStyle(color: Colors.white),
+                        ),
                       ),
                     ),
                   ),
                 ),
                 //register button
+                const SizedBox(
+                  height: 20,
+                ),
 
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
-                  child: ElevatedButton(
-                      onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => LoginPage())),
-                      child: Text(
-                        'Kaydol',
-                        style: TextStyle(color: Colors.white),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: ((context) => LoginPage()), // Geçici
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 75.0),
+                      child: Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 3, color: Colors.white),
+                          borderRadius: BorderRadius.circular(20),
+                          color: Color.fromARGB(255, 25, 80, 125),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Kaydol',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                              fontSize: 24,
+                            ),
+                          ),
+                        ),
                       ),
-                      style: ElevatedButton.styleFrom(
-                          primary: Color(0xFF8D7688),
-                          textStyle: const TextStyle(fontSize: 15))),
+                    ),
+                  ),
                 ),
+
                 // turn back to login page
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -133,9 +177,9 @@ class RegisterPage extends StatelessWidget {
                       child: Text(
                         'Giriş Sayfasına Dön',
                         style: TextStyle(
-                            color: Color(0xFF8D7688),
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
+                          color: Color.fromARGB(255, 25, 80, 125),
+                          fontSize: 16,
+                        ),
                       ),
                       onPressed: () => Navigator.of(context).push(
                           MaterialPageRoute(builder: (context) => LoginPage())),

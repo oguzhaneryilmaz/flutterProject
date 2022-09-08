@@ -38,7 +38,7 @@ class _MusicSearchListState extends State<MusicSearchList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.orange,
+        backgroundColor: Color.fromARGB(255, 25, 80, 125),
         title: Text('Search Music'),
         centerTitle: true,
         leading: IconButton(
@@ -50,20 +50,13 @@ class _MusicSearchListState extends State<MusicSearchList> {
         ),
         leadingWidth: 60,
       ),
+      backgroundColor: Color.fromARGB(255, 166, 227, 244),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Search for a Music',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 22.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
             SizedBox(
               height: 20,
             ),
@@ -74,16 +67,16 @@ class _MusicSearchListState extends State<MusicSearchList> {
               ),
               decoration: InputDecoration(
                 filled: true,
-                fillColor: Color(0xFF302360),
+                fillColor: Color.fromARGB(255, 40, 120, 185),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                   borderSide: BorderSide.none,
                 ),
-                hintText: 'e.g. Fairy Tale',
+                hintText: '...',
                 prefixIcon: Icon(
                   Icons.search,
                 ),
-                prefixIconColor: Colors.purple.shade900,
+                prefixIconColor: Colors.purple[300],
               ),
             ),
             SizedBox(
@@ -96,7 +89,7 @@ class _MusicSearchListState extends State<MusicSearchList> {
                       child: const Text(
                       'No Result Found',
                       style: TextStyle(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 25, 80, 125),
                         fontSize: 22.0,
                         fontWeight: FontWeight.bold,
                       ),

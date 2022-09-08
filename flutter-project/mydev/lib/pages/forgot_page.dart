@@ -19,19 +19,25 @@ class _ForgotPageState extends State<ForgotPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF1EEDB),
-      appBar: AppBar(
-        title: Text("Stateful"),
-      ),
+      backgroundColor: Color.fromARGB(255, 166, 227, 244),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Icon(
+              Icons.mark_email_read,
+              size: 100,
+              color: Colors.white,
+            ),
+            SizedBox(
+              height: 25,
+            ),
             Text(
               'Şifresini unuttuğunuz hesabın \nmail adresini girin',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
+                color: Color.fromARGB(255, 25, 80, 125),
                 fontSize: 20,
               ),
             ),
@@ -40,13 +46,21 @@ class _ForgotPageState extends State<ForgotPage> {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Container(
                 decoration: BoxDecoration(
-                    color: Color(0xFFD9B4A3),
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 3,
+                    ),
+                    color: Color.fromARGB(255, 25, 80, 125),
                     borderRadius: BorderRadius.circular(20)),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 20.0),
                   child: TextField(
                     decoration: InputDecoration(
-                        border: InputBorder.none, hintText: 'Email'),
+                        border: InputBorder.none,
+                        hintText: 'Email',
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        )),
                   ),
                 ),
               ),
@@ -61,12 +75,31 @@ class _ForgotPageState extends State<ForgotPage> {
             SizedBox(
               height: 10,
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  primary: Color(0xFF8D7688),
-                  textStyle: const TextStyle(fontSize: 15)),
-              child: Text('Mail Gönder'),
-              onPressed: changeData,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 75),
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Color.fromARGB(255, 25, 80, 125),
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 3,
+                    )),
+                child: GestureDetector(
+                  onTap: changeData,
+                  child: Center(
+                    child: Text(
+                      'Mail Gönder',
+                      style: TextStyle(
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
             ),
             TextButton(
                 onPressed: (() => Navigator.of(context).push(
@@ -77,7 +110,7 @@ class _ForgotPageState extends State<ForgotPage> {
                 child: Text(
                   'Giriş Sayfasına Dön',
                   style: TextStyle(
-                    color: Color(0xFF8D7688),
+                    color: Color.fromARGB(255, 25, 80, 125),
                     fontWeight: FontWeight.bold,
                   ),
                 ))

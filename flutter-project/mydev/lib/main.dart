@@ -22,10 +22,7 @@ class MyApp extends StatelessWidget {
 
 
 
-//  Farklı sayfalar farklı dosyalara ayrılabilir?(Araştır)
 //  Daha fazla müzik ekle         --------
 //  Kişisel profil sayfası oluştur
-//  Beğendiğin müzikler profilinde gözüksün .. (subject to change)
-//  Müzik sözlerini kısa yolla hallet ? veya kaldır ?
 //  slider eklemeye çalış müzik detay sayfasına          ++++
 //  firebase ile giriş ve kayıt işlemleri         ++++++
